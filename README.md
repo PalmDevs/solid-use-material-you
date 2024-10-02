@@ -1,62 +1,64 @@
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/387eb4bf-8a0f-43f9-89c1-1d9398c261b1" />
-</p>
-
 # Explanation
 
-Friendly react hook to create dynamic schemes and variants based on M3/material-color-utilities. Inspired by [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
+**This is a fork of [`use-material-you` by @maiconcarraro](https://github.com/maiconcarraro/use-material-you).**
 
-The goal is to simplify the usage, already returning hex values to immediately usage and supporting hex, rgba and URL.
+Solid.js hook to create dynamic schemes and variants based on [material-foundation/material-color-utilities](https://github.com/material-foundation/material-color-utilities). Inspired by [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/).
 
-It supports all [main variants](https://github.com/material-foundation/material-color-utilities/blob/main/typescript/scheme) from material-color-utilities. Plus a new variant named `image-fidelity` that is going to use the top 3 dominant colors from the image, dedicated to situations where you want to create beautiful gradients, inspired by [color-thief](https://github.com/lokesh/color-thief/).
+The goal is to simplify the usage, already returning HEX values to immediately usage and supporting HEX, RGBA and URL.
+
+It supports all [main variants](https://github.com/material-foundation/material-color-utilities/blob/main/typescript/scheme) from `material-color-utilities`. Plus a new variant named `image-fidelity` that is going to use the top 3 dominant colors from the image, dedicated to situations where you want to create beautiful gradients, inspired by [color-thief](https://github.com/lokesh/color-thief/).
 
 ## Install
 
 ```
-npm install use-material-you
+npm install solid-create-material-theme
 ```
 
 ## Usage
 
-```tsx
-const [scheme] = useMaterialYou("#7C3AED", {
-  variant: "fidelity",
+From a HEX color:
+
+```jsx
+const [scheme] = createMaterialTheme("#7C3AED", {
+  variant: "tonal_spot",
   isDark: false,
   contrastLevel: "standard",
 });
 
 return (
-  <Box style={{ background: scheme?.primary, color: scheme?.onPrimary }}>
+  <Box style={{ background: scheme.primary, color: scheme.onPrimary }}>
     Primary
   </Box>
 );
 ```
+From a RGBA color:
 
-```tsx
-const [scheme] = useMaterialYou("rgba(124, 58, 237, 0.5)", {
-  variant: "tonal_spot",
-  isDark: true,
+```jsx
+const [scheme] = createMaterialTheme("rgba(124, 58, 237, 0.5)", {
+  variant: "fidelity",
+  dark: true,
   contrastLevel: "medium",
 });
 
-...
+// ...
 ```
 
+From an image URL:
+
 ```tsx
-const [scheme, state] = useMaterialYou(
+const [scheme, state] = createMaterialTheme(
   "https://uploads.sitepoint.com/wp-content/uploads/2021/04/1618197067vitejs.png",
   {
     variant: "image_fidelity", // new variant to use top 3 dominant colors from image
   },
 );
 
-...
+// ...
 ```
 
-## Examples
+## Example
 
-- [useMaterialYou + input color](https://codesandbox.io/p/sandbox/use-material-you-fqmnk3?file=%2Fsrc%2FApp.tsx)
-- [useMaterialYou + input url](https://codepen.io/maiconcarraro/pen/oNrXvRv)
+You can view the example by running `npm run preview` after cloning the project and running `npm install`. The source code for the example is in the [`example`](./example) directory.
 
 ## Variants
 

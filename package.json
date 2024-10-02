@@ -1,13 +1,14 @@
 {
-  "name": "use-material-you",
-  "version": "1.0.3",
-  "description": "React hook to create dynamic schemes and variants based on M3/material-color-utilities",
-  "author": "Maicon Carraro (https://github.com/maiconcarraro)",
-  "homepage": "https://github.com/maiconcarraro/use-material-you",
-  "repository": "github:maiconcarraro/use-material-you",
+  "name": "solid-use-material-you",
+  "version": "1.0.0",
+  "description": "Solid.js hook to create dynamic schemes and variants based on material-foundation/material-color-utilities",
+  "author": "PalmDevs (https://github.com/PalmDevs)",
+  "homepage": "https://github.com/PalmDevs/use-material-you",
+  "repository": "github:PalmDevs/use-material-you",
   "license": "ISC",
   "keywords": [
-    "react",
+    "solid",
+    "solid-js",
     "m3",
     "material-color-utilities",
     "variants",
@@ -21,44 +22,28 @@
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
-    "dev": "tsc && vite build --watch",
+    "preview": "vite dev",
     "start": "vite --host --open",
-    "build": "tsc && vite build",
-    "build:types": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
-    "lint:scripts": "eslint ./src --ext .ts",
-    "lint:styles": "stylelint ./**/*.{css,scss}",
-    "format:scripts": "prettier ./src --write",
-    "format:styles": "stylelint ./**/*.{css,scss} --fix"
+    "build": "bun build src/index.ts --bundle --minify --sourcemap=external --outfile=dist/index.js --outdir=dist -e solid-js && tsc",
+    "lint": "biome check .",
+    "format": "biome check --write ."
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.3.0"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "solid-js": "^1.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@tsconfig/strictest": "^2.0.5",
     "@types/node": "^20.11.24",
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "dts-bundle-generator": "^9.5.1",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.3.1",
-    "stylelint": "^16.2.1",
-    "stylelint-config-recommended": "^14.0.0",
-    "stylelint-config-sass-guidelines": "^11.0.0",
-    "tslib": "^2.6.2",
+    "sass": "^1.78.0",
     "typescript": "^5.4.2",
-    "vite": "^5.2.13",
-    "vite-plugin-dts": "^3.9.1"
-  }
+    "vite": "^5.4.3",
+    "vite-plugin-solid": "^2.10.2"
+  },
+  "trustedDependencies": ["@biomejs/biome"]
 }

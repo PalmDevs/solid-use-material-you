@@ -1,0 +1,94 @@
+@import url(https://fonts.bunny.net/css?family=roboto:300,400,500,700);
+
+:root {
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    padding: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h1,
+h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin: 0;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--m3-ilb);
+}
+
+p {
+    margin: 0;
+}
+
+body,
+main,
+div,
+p,
+input,
+select {
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+input,
+select {
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: inherit;
+    background-color: var(--m3-ibg);
+    color: var(--m3-itx);
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 640px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-inline: 16px;
+    padding-block: 32px;
+    gap: 8px;
+}
+
+.labeled {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}

@@ -1,6 +1,6 @@
 export type {
-  ContrastLevelType,
-  VariantType,
-  SimpleDynamicScheme,
-} from "./schemes";
-export { useMaterialYou } from "./useMaterialYou";
+    ContrastLevelType,
+    VariantType,
+    MaterialTheme as SimpleMaterialScheme,
+} from './schemes'
+export { createMaterialTheme } from './hooks'
