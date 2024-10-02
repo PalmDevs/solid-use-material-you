@@ -1,10 +1,10 @@
 {
-  "name": "solid-use-material-you",
+  "name": "solid-create-material-theme",
   "version": "1.0.0",
   "description": "Solid.js hook to create dynamic schemes and variants based on material-foundation/material-color-utilities",
   "author": "PalmDevs (https://github.com/PalmDevs)",
-  "homepage": "https://github.com/PalmDevs/use-material-you",
-  "repository": "github:PalmDevs/use-material-you",
+  "homepage": "https://github.com/PalmDevs/solid-create-material-theme",
+  "repository": "github:PalmDevs/solid-create-material-theme",
   "license": "ISC",
   "keywords": [
     "solid",
@@ -18,8 +18,7 @@
     "npm",
     "package"
   ],
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "files": ["dist"],

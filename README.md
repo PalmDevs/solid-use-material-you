@@ -1,4 +1,4 @@
-# Explanation
+# solid-create-material-theme
 
 **This is a fork of [`use-material-you` by @maiconcarraro](https://github.com/maiconcarraro/use-material-you).**
 
